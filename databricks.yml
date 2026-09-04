@@ -1,0 +1,11 @@
+bundle:
+  name: databricks_sales_capstone
+
+include:
+  - resources/*.yml
+
+targets:
+
+  dev:
+    mode: development
+    default: true

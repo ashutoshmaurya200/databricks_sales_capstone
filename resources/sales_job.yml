@@ -11,13 +11,13 @@ resources:
 
         - task_key: data_quality
           depends_on:
-            - task_key: data_quality
+            - task_key: bronze_ingestion
           spark_python_task:
             python_file: ../src/00_data_quality_report.py
 
         - task_key: silver_cleaning
           depends_on:
-            - task_key: bronze_ingestion
+            - task_key: data_quality
           spark_python_task:
             python_file: ../src/02_silver_cleaning.py
 
